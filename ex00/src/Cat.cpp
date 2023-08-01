@@ -18,3 +18,7 @@ Cat	&Cat::operator=(const Cat &cat) {
 Cat::~Cat() {
 	cout << "[Cat] destructor function called." << endl;
 }
+
+void	Cat::makeSound() const {
+	cout << "[Cat] Meowww!" << endl;
+}

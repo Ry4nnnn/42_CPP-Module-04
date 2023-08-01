@@ -20,6 +20,6 @@ Animal::~Animal() {
 }
 
 /* getter function for type of Animal class */
-std::string Animal::get_type() {
+std::string Animal::get_type() const {
 	return (this->type);
 }
