@@ -1,5 +1,5 @@
 
-NAME = animal
+NAME = brain
 
 CPP = c++
 
