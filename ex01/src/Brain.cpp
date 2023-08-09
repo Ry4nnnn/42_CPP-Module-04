@@ -23,7 +23,7 @@ Brain::~Brain() {
 void	Brain::setIdea(std::string newIdea) {
 	for (int i = 0; i < IDEAS; i++)
 	{
-		if (this->_ideas[i].empty)
+		if (this->_ideas[i].empty())
 		{
 			this->_ideas[i] = newIdea;
 			break;
