@@ -8,15 +8,15 @@
 using std::cout;
 using std::endl;
 
-class Animal {
+class AAnimal {
 	protected:
 		std::string type;
 
 	public:
-		Animal();
-		Animal(const Animal &animal);
-		Animal	&operator=(const Animal &animal);
-		virtual ~Animal();
+		AAnimal();
+		AAnimal(const AAnimal &A);
+		AAnimal	&operator=(const AAnimal &A);
+		virtual ~AAnimal();
 		std::string get_type() const;
 		virtual void makeSound() const;
 };
