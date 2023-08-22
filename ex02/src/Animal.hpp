@@ -12,7 +12,7 @@ class AAnimal {
 	protected:
 		std::string type;
 
-	public:
+	private:
 		AAnimal();
 		AAnimal(const AAnimal &A);
 		AAnimal	&operator=(const AAnimal &A);
