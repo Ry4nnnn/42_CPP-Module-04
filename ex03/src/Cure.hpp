@@ -1,19 +1,19 @@
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
 # include <iostream>
 # include <string>
 # include "AMateria.hpp"
 
-class Ice : public AMateria {
-	protected:
-		std::string	_type;
-
+class Cure : public AMateria {
 	public:
-		Ice();
-		Ice(std::string name);
-		~Ice();
+		Cure();
+		Cure(const Cure &a);
+		Cure	&operator=(const Cure &a);
+		~Cure();
 
+		AMateria *clone() const;
+		void	use(ICharacter &target);
 };
 
 #endif

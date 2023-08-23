@@ -9,7 +9,6 @@
 class Character : public ICharacter {
 	private:
 		std::string _name;
-		static int _size;
 		AMateria	*_inventory[MAX_INV];
 
 	public:
