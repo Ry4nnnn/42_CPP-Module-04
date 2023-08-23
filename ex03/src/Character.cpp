@@ -1,4 +1,4 @@
-#include "Character.hpp"
+	#include "Character.hpp"
 
 Character::Character() {
 	
@@ -22,8 +22,9 @@ Character	&Character::operator=(const Character &a) {
 }
 
 Character::~Character() {
-	for (int i = 0; _inventory[i] != NULL; i++)
-		delete (_inventory[i]);
+	for (int i = 0; i < MAX_INV; i++)
+		if (this->_inventory[i] != NULL)
+			delete (this->_inventory[i]);
 }
 
 
