@@ -8,17 +8,17 @@
 using std::cout;
 using std::endl;
 
-class AAnimal {
+class Animal {
 	protected:
-		std::string type;
+		std::string _type;
 
-	private:
-		AAnimal();
-		AAnimal(const AAnimal &A);
-		AAnimal	&operator=(const AAnimal &A);
-		virtual ~AAnimal();
-		std::string get_type() const;
-		virtual void makeSound() const;
+	public:
+		Animal();
+		Animal(const Animal &animal);
+		Animal	&operator=(const Animal &animal);
+		virtual ~Animal();
+		std::string getType() const;
+		virtual void makeSound() const = 0;
 };
 
 #endif

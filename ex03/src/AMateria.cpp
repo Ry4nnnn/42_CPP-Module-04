@@ -1,11 +1,11 @@
 #include "AMateria.hpp"
 
 AMateria::AMateria() {
-
+	this->_type = "undefined";
 }
 
-AMateria::AMateria(std::string const &type) : _type(type) {
-
+AMateria::AMateria(std::string const &type) {
+	this->_type = type;
 }
 
 AMateria::AMateria(const AMateria &a) {

@@ -7,11 +7,9 @@
 using std::cout;
 using std::endl;
 
-#define IDEAS 100
-
 class 	Brain {
 	private:
-		std::string	_ideas[IDEAS];
+		std::string	_ideas[100];
 
 	public:
 		Brain();

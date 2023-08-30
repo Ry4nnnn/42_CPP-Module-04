@@ -1,29 +1,30 @@
 #include "Animal.hpp"
 
-AAnimal::AAnimal() {
+Animal::Animal() {
 	cout << "[Animal] default constructor function called." << endl;
+	this->_type = "Animal";
 }
 
-AAnimal::AAnimal(const AAnimal &A) {
-	cout << "[Animal] copy constructor function called." << endl;
-	*this = A;
+Animal::Animal(const Animal &animal) {
+	// cout << "[Animal] copy constructor function called." << endl;
+	this->_type = animal._type;
 }
 
-AAnimal	&AAnimal::operator=(const AAnimal &A) {
-	cout << "[Animal] copy assignment operator function called." << endl;
-	this->type = A.type;
+Animal	&Animal::operator=(const Animal &animal) {
+	// cout << "[Animal] copy assignment operator function called." << endl;
+	this->_type = animal._type;
 	return (*this);
 }
 
-AAnimal::~AAnimal() {
+Animal::~Animal() {
 	cout << "[Animal] destructor function called." << endl;
 }
 
-/* getter function for type of AAnimal class */
-std::string AAnimal::get_type() const {
-	return (this->type);
+/* getter function for type of Animal class */
+std::string Animal::getType() const {
+	return (this->_type);
 }
 
-void	AAnimal::makeSound() const {
+void	Animal::makeSound() const {
 	cout << "[Animal] does not make sound." << endl;
 }

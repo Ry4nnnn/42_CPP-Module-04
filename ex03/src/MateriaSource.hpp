@@ -4,11 +4,10 @@
 # include "IMateriaSource.hpp"
 # include "AMateria.hpp"
 
-# define MAX_MAT 4
-
 class MateriaSource : public IMateriaSource {
 	private:
-		AMateria *_materia[MAX_MAT];
+		AMateria *_materia[4];
+		static int _size;
 
 	public:
 		MateriaSource();

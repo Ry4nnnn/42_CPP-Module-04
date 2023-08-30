@@ -4,12 +4,11 @@
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-# define MAX_INV 4
-
 class Character : public ICharacter {
 	private:
 		std::string _name;
-		AMateria	*_inventory[MAX_INV];
+		AMateria	*_inventory[4];
+		static int _size;
 
 	public:
 		Character();

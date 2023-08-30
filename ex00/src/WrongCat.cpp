@@ -2,15 +2,17 @@
 
 WrongCat::WrongCat() {
 	cout << "[WrongCat] default constructor function called." << endl;
+	this->_type = "WrongCat";
 }
 
 WrongCat::WrongCat(const WrongCat &wrongcat) {
-	cout << "[WrongCat] copy constructor function called." << endl;
+	// cout << "[WrongCat] copy constructor function called." << endl;
+	this->_type = wrongcat._type;
 }
 
 WrongCat	&WrongCat::operator=(const WrongCat &wrongcat) {
-	cout << "[WrongCat] copy assignment constructor called." << endl;
-	this->type = wrongcat.type;
+	// cout << "[WrongCat] copy assignment constructor called." << endl;
+	this->_type = wrongcat._type;
 	return (*this);
 }
 
@@ -19,5 +21,5 @@ WrongCat::~WrongCat() {
 }
 
 void	WrongCat::makeSound() const {
-	cout << "[WrongCat] WMeowww!" << endl;
+	cout << "[WrongCat] make sound function called." << endl;
 }

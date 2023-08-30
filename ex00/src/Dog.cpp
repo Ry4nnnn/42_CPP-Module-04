@@ -2,16 +2,17 @@
 
 Dog::Dog() {
 	cout << "[Dog] default constructor function called." << endl;
+	this->_type = "Dog";
 }
 
 Dog::Dog(const Dog &dog) {
-	cout << "[Dog] copy constructor function called." << endl;
-	*this = dog;
+	// cout << "[Dog] copy constructor function called." << endl;
+	this->_type = dog._type;
 }
 
 Dog	&Dog::operator=(const Dog &dog) {
-	cout << "[Dog] copy assignment operator function called." << endl;
-	this->type = dog.type;
+	// cout << "[Dog] copy assignment operator function called." << endl;
+	this->_type = dog._type;
 	return (*this);
 }
 
@@ -20,5 +21,5 @@ Dog::~Dog() {
 }
 
 void	Dog::makeSound() const {
-	cout << "[Dog] Woofff!" << endl;
+	cout << "[Dog] make sound function called." << endl;
 }

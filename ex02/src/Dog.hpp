@@ -3,7 +3,7 @@
 
 # include "Animal.hpp"
 
-class Dog : public AAnimal {
+class Dog : public Animal {
 	public:
 		Dog();
 		Dog(const Dog &dog);
@@ -12,7 +12,7 @@ class Dog : public AAnimal {
 		void	makeSound() const;
 
 	private:
-		Brain	*B;
+		const Brain *brain;
 };
 
 #endif

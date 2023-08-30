@@ -1,17 +1,18 @@
 	#include "Character.hpp"
 
 Character::Character() {
-	
+	this->_name = "undefined";
 }
 
-Character::Character(std::string name) : _name(name) {
-
+Character::Character(std::string name) {
+	this->_name = name;
 }
 
 Character::Character(const Character &a) {
 	this->_name = a._name;
 	for (int i = 0; a._inventory[i] != NULL; i++)
 		_inventory[i] = a._inventory[i];
+	_size = a._size;
 }
 
 Character	&Character::operator=(const Character &a) {
@@ -22,7 +23,7 @@ Character	&Character::operator=(const Character &a) {
 }
 
 Character::~Character() {
-	for (int i = 0; i < MAX_INV; i++)
+	for (int i = 0; i < 4; i++)
 		if (this->_inventory[i] != NULL)
 			delete (this->_inventory[i]);
 }
@@ -33,7 +34,7 @@ std::string const &Character::getName() const {
 }
 
 void	Character::equip(AMateria *m) {
-	for (int i = 0; i < MAX_INV; i++) {
+	for (int i = 0; i < 4; i++) {
 		if (this->_inventory[i] == NULL) {
 			this->_inventory[i] = m;
  				return ;
@@ -42,14 +43,13 @@ void	Character::equip(AMateria *m) {
 }
 
 void 	Character::unequip(int idx) {
-	if (idx < 0 || idx >= MAX_INV || this->_inventory[idx] == NULL)
+	if (idx < 0 || idx >= 4 || this->_inventory[idx] == NULL)
 		return ;
 	this->_inventory[idx] = NULL;
 }
 
 void	Character::use(int idx, ICharacter &target) {
-	if (idx < 0 || idx >= MAX_INV || this->_inventory[idx] == NULL)
+	if (idx < 0 || idx >= 4 || this->_inventory[idx] == NULL)
 		return ;
 	this->_inventory[idx]->use(target);
 }
-

@@ -5,22 +5,22 @@ MateriaSource::MateriaSource() {
 }
 
 MateriaSource::MateriaSource(const MateriaSource &a) {
-	*this = a;
+	_size = a._size;
 }
 
 MateriaSource	&MateriaSource::operator=(const MateriaSource &a) {
-	*this = a;
+	_size = a._size;
 	return (*this);
 }
 
 MateriaSource::~MateriaSource() {
-	for (int i = 0; i < MAX_MAT; i++)
+	for (int i = 0; i < 4; i++)
 		if (this->_materia[i] != NULL)
 			delete (this->_materia[i]);
 }
 
 void	MateriaSource::learnMateria(AMateria *aMateria) {
-	for (int i = 0; i < MAX_MAT; i++) {
+	for (int i = 0; i < 4; i++) {
 		if (this->_materia[i] == NULL) {
 			this->_materia[i] = aMateria;
 			break;
@@ -29,7 +29,7 @@ void	MateriaSource::learnMateria(AMateria *aMateria) {
 }
 
 AMateria	*MateriaSource::createMateria(std::string const &type) {
-	for (int i = 0; i < MAX_MAT; i++) {
+	for (int i = 0; i < 4; i++) {
 		if (this->_materia[i] == NULL)
 			break;
 		if (this->_materia[i]->getType() == type)

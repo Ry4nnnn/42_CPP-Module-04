@@ -9,14 +9,14 @@ using std::endl;
 
 class Animal {
 	protected:
-		std::string type;
+		std::string _type;
 
 	public:
 		Animal();
 		Animal(const Animal &animal);
 		Animal	&operator=(const Animal &animal);
-		~Animal();
-		std::string get_type() const;
+		virtual ~Animal();
+		std::string getType() const;
 		virtual void makeSound() const;
 };
 

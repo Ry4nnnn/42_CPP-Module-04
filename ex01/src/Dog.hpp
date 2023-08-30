@@ -12,7 +12,7 @@ class Dog : public Animal {
 		void	makeSound() const;
 
 	private:
-		Brain	*B;
+		const Brain *brain;
 };
 
 #endif
