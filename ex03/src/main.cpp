@@ -8,27 +8,68 @@
 
 int main(void)
 {
-    IMateriaSource *src = new MateriaSource();
+	{
+		IMateriaSource *src = new MateriaSource();
 
-    src->learnMateria(new Ice());
-    src->learnMateria(new Cure());
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
 
-    ICharacter *human = new Character("human");
+		ICharacter *me = new Character("me");
 
-    AMateria *tmp;
+		AMateria *tmp;
+		tmp = src->createMateria("ice");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
 
-    tmp = src->createMateria("ice");
-    human->equip(tmp);
+		ICharacter *bob = new Character("bob");
 
-    tmp = src->createMateria("cure");
-    human->equip(tmp);
+		me->use(0, *bob);
+		me->use(1, *bob);
 
-    ICharacter *bob = new Character("bob");
+		delete bob;
+		delete me;
+		delete src;
+	}
+	{
+		IMateriaSource	*src = new MateriaSource();
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		src->learnMateria(new Ice());
+		ICharacter	*p1 = new Character("P1");
+		ICharacter	*p2 = new Character("P2");
+		AMateria	*tmp;
 
-    human->use(0, *bob);
-    human->use(1, *bob);
-    delete bob;
-    delete human;
-    delete src;
-    return 0;
+		p1->use(3, *p2);
+		tmp = src->createMateria("Water");
+		
+		// std::cout << std::endl;
+
+		// tmp = src->createMateria("Ice");
+		// p1->equip(tmp);
+		// p1->equip(tmp);
+
+		// tmp = src->createMateria("Cure");
+		// p1->equip(tmp);
+		// tmp = src->createMateria("Ice");
+		// p1->equip(tmp);
+		// tmp = src->createMateria("Cure");
+		// p1->equip(tmp);
+
+		// p1->unequip(4);
+		// p1->unequip(1);
+
+		// tmp = src->createMateria("Ice");
+		// p1->equip(tmp);
+		// tmp = src->createMateria("Cure");
+		// p1->equip(tmp);
+
+		// delete p1;
+		// delete p2;
+		// delete src;
+		// system("leaks ff42");
+	}
+	return 0;
 }

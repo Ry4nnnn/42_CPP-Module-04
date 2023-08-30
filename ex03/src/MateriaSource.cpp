@@ -1,15 +1,15 @@
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource() {
-
+	this->_size = 0;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &a) {
-	_size = a._size;
+	this->_size = a._size;
 }
 
 MateriaSource	&MateriaSource::operator=(const MateriaSource &a) {
-	_size = a._size;
+	this->_size = a._size;
 	return (*this);
 }
 

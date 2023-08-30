@@ -7,7 +7,7 @@
 class MateriaSource : public IMateriaSource {
 	private:
 		AMateria *_materia[4];
-		static int _size;
+		int _size;
 
 	public:
 		MateriaSource();

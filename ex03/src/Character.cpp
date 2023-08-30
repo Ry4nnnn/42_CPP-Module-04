@@ -1,7 +1,8 @@
-	#include "Character.hpp"
+#include "Character.hpp"
 
 Character::Character() {
 	this->_name = "undefined";
+	this->_sz = 0;
 }
 
 Character::Character(std::string name) {
@@ -12,7 +13,7 @@ Character::Character(const Character &a) {
 	this->_name = a._name;
 	for (int i = 0; a._inventory[i] != NULL; i++)
 		_inventory[i] = a._inventory[i];
-	_size = a._size;
+	this->_sz = a._sz;
 }
 
 Character	&Character::operator=(const Character &a) {
