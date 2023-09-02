@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include "ICharacter.hpp"
+#include "styling.h"
 
 using std::cout;
 using std::endl;

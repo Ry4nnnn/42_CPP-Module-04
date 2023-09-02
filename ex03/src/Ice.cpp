@@ -4,7 +4,7 @@ Ice::Ice() {
 	this->_type = "ice";
 }
 
-Ice::Ice(const Ice &a) {
+Ice::Ice(const Ice &a) : AMateria(a) {
 	this->_type = a._type;
 }
 

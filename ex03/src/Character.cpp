@@ -46,7 +46,7 @@ void	Character::equip(AMateria *m) {
 		int i;
 		for (i = 0; i < 4; i++) {
 			if (this->_inventory[i] == NULL) {
-				this->_inventory[i] = m;
+				this->_inventory[i] = m->clone();
 				break;
 			}
 		}

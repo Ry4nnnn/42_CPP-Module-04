@@ -6,12 +6,14 @@ Brain::Brain() {
 
 Brain::Brain(const Brain &brain) {
 	cout << "[Brain] copy constructor function called." << endl;
-	*this = brain;
+	for (int i = 0; i < 4; i++)
+		this->_ideas[i] = brain._ideas[i];
 }
 
 Brain	&Brain::operator=(const Brain &brain) {
 	cout << "[Brain] copy assignment operator function called." << endl;
-	std::copy(std::begin(brain._ideas), std::end(brain._ideas), _ideas);
+	for (int i = 0; i < 4; i++)
+		this->_ideas[i] = brain._ideas[i];
 	return (*this);
 }
 

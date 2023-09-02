@@ -20,10 +20,7 @@ int main()
 	for (int i= 0; i < size; i++)
 		delete array[i];
 
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
-
-	// delete j;
-	// delete i;
+	// Animal animal;
+	
 	return 0;
 }
